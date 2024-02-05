@@ -1,4 +1,8 @@
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  signOut,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "./../../firebase";
 
 const login = (payload) => ({
@@ -30,10 +34,21 @@ export const loginDispatcher = ({ email, password, remember }) => {
 
 export const logoutDispatcher = () => {
   return async (dispatch) => {
-    await signOut(auth);
-    localStorage.removeItem("user");
-    dispatch(logout());
+    try {
+      await signOut(auth);
+      localStorage.removeItem("user");
+      dispatch(logout());
+    } catch (err) {
+      console.log("something is wrong", err);
+    }
   };
 };
 
-export const authorizeUser = () => {};
+export const signup = async ({ email, password }) => {
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    return Promise.resolve("acount created!");
+  } catch (err) {
+    return Promise.reject(err);
+  }
+};

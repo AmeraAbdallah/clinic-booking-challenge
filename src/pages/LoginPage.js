@@ -9,6 +9,8 @@ import Checkbox from "@mui/material/Checkbox";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { loginDispatcher } from "./../store/actions/auth";
@@ -101,13 +103,16 @@ function LoginPage({ loginHandler, error, ...props }) {
             >
               Sign In
             </Button>
-            {/* <Grid container>
+            <Grid container>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link
+                  variant="body2"
+                  onClick={() => props.history.push("/signup")}
+                >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
-            </Grid> */}
+            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />

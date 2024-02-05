@@ -6,11 +6,8 @@ import "./App.css";
 import confegureStore from "./store/confegureStore";
 import AppRouter from "./routers/AppRouter";
 
-import { authorizeUser } from "./store/actions/auth";
-
 function App() {
   const store = confegureStore();
-  //store.dispatch(authorizeUser());
 
   return (
     <Provider store={store}>
