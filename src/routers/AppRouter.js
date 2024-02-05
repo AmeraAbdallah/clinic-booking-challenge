@@ -6,7 +6,7 @@ import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
 import LoginPage from "./../pages/LoginPage";
-import SingUp from "./../pages/SingUp";
+import SingUpPage from "./../pages/SingUpPage";
 import HomePage from "./../pages/HomePage";
 
 const history = createBrowserHistory();
@@ -17,7 +17,7 @@ const AppRouter = () => (
       <Switch>
         <PrivateRoute path="/" component={HomePage} exact />
         <PublicRoute path="/login" component={LoginPage} exact />
-        <PublicRoute path="/signup" component={SingUp} exact />
+        <PublicRoute path="/signup" component={SingUpPage} exact />
       </Switch>
     </div>
   </BrowserRouter>

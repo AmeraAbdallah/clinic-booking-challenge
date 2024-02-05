@@ -15,7 +15,7 @@ import ManuIcon from "@mui/icons-material/Menu";
 
 import { logoutDispatcher } from "./../store/actions/auth";
 
-function SideMenu({ logout }) {
+function SideMenu({ logout, history }) {
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -41,16 +41,6 @@ function SideMenu({ logout }) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ManuIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Users"} />
-          </ListItemButton>
-        </ListItem>
-      </List>
       <Divider />
       <List>
         <ListItem disablePadding>
