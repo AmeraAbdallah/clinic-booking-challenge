@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 
 import "normalize.css";
-//import './styles/style.scss'
+import "./App.css";
 
 import confegureStore from "./store/confegureStore";
 import AppRouter from "./routers/AppRouter";
